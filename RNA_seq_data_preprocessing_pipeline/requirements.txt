@@ -1,0 +1,10 @@
+conda create -n RNA_seq
+conda install bioconda::trim_galore
+conda install bioconda::fastqc
+conda intall bioconda::STAR
+conda install bioconda::subread
+pip install RSeQC
+
+
+genome fastq files and gene annotation gtf files download from UCSC.
+gene body bed files download from RSeQC.
