@@ -24,4 +24,6 @@ cpun: Number of threads.
 
 md5sum_ref: md5sum code for each input file.
 
+## 1. ATAC_seq_data_preprocessing_pipeline
 
+Initilizing the runing enviroment according to this requirments file
