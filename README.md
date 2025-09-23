@@ -26,4 +26,5 @@ md5sum_ref: md5sum code for each input file.
 
 ## 1. ATAC_seq_data_preprocessing_pipeline
 
-Initilizing the runing enviroment according to this requirments file
+Initilizing the runing enviroment according to this requirments file[https://github.com/haojiechen94/Bioinformatic_analysis_pipelines/blob/main/ATAC_and_ChIP_seq_data_preprocessing_pipeline/ATAC_and_ChIP_seq.yml]
+
