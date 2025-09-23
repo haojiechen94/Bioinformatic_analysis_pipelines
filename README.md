@@ -2,9 +2,14 @@
 
 ## 1. RNA_seq_data_preprocessing_pipeline
 
-Initilizing the runing enviroment according to this requirments file[https://github.com/haojiechen94/Bioinformatic_analysis_pipelines/blob/main/RNA_seq_data_preprocessing_pipeline/requirements.txt]
+Initilizing the runing enviroment according to this requirments file[https://github.com/haojiechen94/Bioinformatic_analysis_pipelines/blob/main/RNA_seq_data_preprocessing_pipeline/RNA_seq.yml]
+```
+conda env create -f RNA_seq.yml
+```
+
 
 Running commands:
+```
 
 ./RNA_seq_data_preprocessing_pipeline.sh metadata input_dir output_dir star_index_dir gene_ref rseqc_ref batch_size cpun md5sum_ref
 
@@ -23,10 +28,15 @@ batch_size: Maximun number of running tasks in each step.
 cpun: Number of threads.
 
 md5sum_ref: md5sum code for each input file.
+```
+
 
 ## 1. ATAC_seq_data_preprocessing_pipeline
 
 Initilizing the runing enviroment according to this requirments file[https://github.com/haojiechen94/Bioinformatic_analysis_pipelines/blob/main/ATAC_and_ChIP_seq_data_preprocessing_pipeline/ATAC_and_ChIP_seq.yml]
+```
+conda env create -f ATAC_and_ChIP_seq.yml
+```
 
 Using bedtools to create genome_bins bed file:
 ```
@@ -34,5 +44,6 @@ bedtools makewindows -g chrom.sizes -w 50 > genome_bins.bed
 
 bedtools sort -i genome_bins.bed > genome_bins.sorted.bed
 ```
+
 
 
