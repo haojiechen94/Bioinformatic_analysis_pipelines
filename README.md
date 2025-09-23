@@ -28,3 +28,11 @@ md5sum_ref: md5sum code for each input file.
 
 Initilizing the runing enviroment according to this requirments file[https://github.com/haojiechen94/Bioinformatic_analysis_pipelines/blob/main/ATAC_and_ChIP_seq_data_preprocessing_pipeline/ATAC_and_ChIP_seq.yml]
 
+Using bedtools to create genome_bins bed file:
+```
+bedtools makewindows -g chrom.sizes -w 50 > genome_bins.bed 
+
+bedtools sort -i genome_bins.bed > genome_bins.sorted.bed
+```
+
+
