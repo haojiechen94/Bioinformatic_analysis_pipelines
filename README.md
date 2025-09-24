@@ -75,17 +75,24 @@ adjusted_p_value_cutoff_hypervariable_analysis: Threshold for defining significa
 Running commands:
 ```
 
-metadata=${1}
-input_dir=${2}
-output_dir=${3}
-bowtie_index=${4}
-library_type=${5}
-genome_version=${6}
-batch_size=${7}
-cpun=${8}
-md5sum_ref=${9}
+metadata: metadata file descripts the details of study design and sample information.
+
+input_dir/output_dir: Directory for input data and output data.
+
+bowtie_index: bowtie2 index for reads alignment.
+
+library_type: ATAC or CHIPSE or CHIPPE
+
+genome_version: mm9/mm10/mm39/hg19/hg38
+
+batch_size: Maximun number of running tasks in each step.
+
+cpun: Number of threads.
+
+md5sum_ref: md5sum code for each input file.
 
 ```
+
 
 
 
