@@ -11,9 +11,17 @@ Preparing reference file:
 ```
 mm10 as example:
 
-wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.fa.gz
+downloading genome reference:
+
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.fa.gz && gunzip mm10.fa.gz
 
 wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.refGene.gtf.gz && gunzip mm10.refGene.gtf.gz
+
+wget -c https://sourceforge.net/projects/rseqc/files/BED/Mouse_Mus_musculus/mm10.HouseKeepingGenes.bed.gz && gunzip mm10.HouseKeepingGenes.bed.gz
+
+buliding bowtie2 index:
+
+STAR --runMode genomeGenerate --genomeDir ./index --runThreadN 10 --genomeFastaFiles  mm10.fa  --sjdbGTFfile mm10.refGene.gtf --sjdbOverhang 149
 
 ```
 
@@ -128,6 +136,7 @@ cpun: Number of threads.
 md5sum_ref: md5sum code for each input file.
 
 ```
+
 
 
 
