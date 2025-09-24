@@ -7,6 +7,16 @@ Initilizing the runing enviroment according to this requirments file[https://git
 conda env create -f RNA_seq.yml
 ```
 
+Preparing reference file:
+```
+mm10 as example:
+
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.fa.gz
+
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.refGene.gtf.gz && gunzip mm10.refGene.gtf.gz
+
+```
+
 
 Running commands:
 ```
@@ -44,6 +54,32 @@ bedtools makewindows -g chrom.sizes -w 50 > genome_bins.bed
 
 bedtools sort -i genome_bins.bed > genome_bins.sorted.bed
 ```
+
+Preparing reference files:
+```
+mm10 as example:
+
+downloading genome reference:
+
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.chrom.sizes
+
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.fa.gz
+
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/genes/mm10.refGene.gtf.gz && gunzip mm10.refGene.gtf.gz
+
+wget -c https://github.com/Boyle-Lab/Blacklist/blob/master/lists/Blacklist_v1/mm10-blacklist.bed.gz && gunzip mm10-blacklist.bed.gz
+
+buliding bowtie2 index:
+
+bowtie2-build ./mm10.fa mm10
+
+downloading homer reference:
+
+./configureHomer.pl -install mm10
+
+
+```
+
 
 Configuring default parameters:
 ```
@@ -92,6 +128,7 @@ cpun: Number of threads.
 md5sum_ref: md5sum code for each input file.
 
 ```
+
 
 
 
